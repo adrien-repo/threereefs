@@ -20,16 +20,15 @@
 			@font-face {font-family: 'Adobe Caslon Pro'; src: url('https://threereefs.com/ACaslonPro-Regular.otf') format('opentype'); font-weight: normal; font-style: normal; }
 			html {background-color: #ffffff;}
 			*{margin:0;padding:0;box-sizing:border-box;}
-			body{display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:100vh;background-color:#ffffff;font-family:'Adobe Caslon Pro', serif;color:#152030;padding:40px 20px;line-height:1.6;font-size:1.15em;}
+			body{display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:100vh;background-color:#ffffff;font-family:'Adobe Caslon Pro', serif;color:#152030;padding:40px 20px;line-height:1.6;font-size:1.1em;}
 			.content-wrapper{max-width:800px;width:100%;}
 			img{display:block;max-width:300px;height:auto;margin:0 auto 3rem auto;}
 			.main-text{text-align:justify;text-align-last:left;margin-bottom:2.5rem;}
-			strong, b {font-weight: 700}
 			.address-container{display:flex;flex-direction:row;flex-wrap:wrap;gap:1em;width:100%;}
-			.address-box{flex:1 1 350px;text-align:left;padding-left: 0.5em; text-indent: -0.5em;}
+			.address-box{flex:1 1 350px;text-align:left;}
 			.email-section{display:grid;grid-template-columns:auto 1fr;column-gap:22px;row-gap:0px;}
-			.email-section > *:not(:first-child) { margin-left: 0.5em; }
-			.email-link{color:inherit;text-decoration:underline;}
+			.email-link{color:inherit;text-decoration: none;}
+			.email-link:hover {text-decoration: underline; }
 			.disclaimer{margin-top:2rem;font-size:0.8em;color:#888888;text-align:justify;line-height:1.4;padding-top:1.5rem;}
 		</style>
 	</head>
@@ -37,21 +36,21 @@
 		<div class="content-wrapper">
 			<img src="https://threereefs.com/logo.png" alt="Three Reefs">
 			<div class="main-text">
-				<b>Three Reefs</b> is a privately held financial group incorporated in the Cayman Islands. The group has two operating companies: Three Reefs Trading SEZC and Three Reefs Global.
+				<small>THREE REEFS</small> is a privately held financial group incorporated in the Cayman Islands. The group has two operating companies: <small>THREE REEFS TRADING SEZC</small> and <small>THREE REEFS GLOBAL</small>.
 				<br><br>
-				<b>Three Reefs Trading SEZC</b> is a proprietary trading entity and single-family office. It trades commodities and financial instruments across global markets. It does not solicit or accept outside capital. Three Reefs Trading SEZC is registered as an Exempted Special Economic Zone Company (No. SN-433268). 
+				<small>THREE REEFS TRADING SEZC</small> is a proprietary trading entity and single-family office. It trades commodities and financial instruments across global markets. It does not solicit or accept outside capital. Three Reefs Trading SEZC is registered as an Exempted Special Economic Zone Company <small>(No. SN-433268)</small>. 
 				<br><br>
-				<b>Three Reefs Global</b> provides specialized solutions and services to Three Reefs Trading SEZC, qualified institutional financial entities, and professional clients. It does not serve retail or individual customers. Three Reefs Global is incorporated as an Exempted Company (No. SN-433266). 
+				<small>THREE REEFS GLOBAL</small> provides specialized solutions and services to Three Reefs Trading SEZC, qualified institutional financial entities, and professional clients. It does not serve retail or individual customers. Three Reefs Global is incorporated as an Exempted Company <small>(No. SN-433266)</small>. 
 			</div>
 			<div class="address-container">
 				<div class="address-box">
-					<b>Principal Office</b><br>
+					<small>PRINCIPAL OFFICE</small><br>
 					Cayman Commodities and Derivatives Centre<br>
 					Signal House, 21B, 134 Off Fairbanks Road<br>
 					George Town, Grand Cayman KY1-9012
 				</div>
 				<div class="address-box">
-					<b>Registered Office</b><br>
+					<small>REGISTERED OFFICE</small><br>
 					c/o Sinclair Corporate Services Ltd<br>
 					3rd Floor, Genesis Building, PO Box 498<br>
 					George Town, Grand Cayman KY1-1006
@@ -59,7 +58,7 @@
 			</div>
 			<br>
 			<div class="email-section">
-				<span style="grid-column:1 / -1;"><b>Contact Details</b></span>
+				<span style="grid-column:1 / -1;"><small>CONTACT DETAILS</small></span>
 				<span>General Enquiries</span>
 				<a href="mailto:info@threereefs.com" class="email-link">info@threereefs.com</a>
 				<span>Operations</span>
