@@ -545,6 +545,26 @@
 			width: 100%;
 			height: 1px;
 		}
+		
+		.br-desktop { display: none; }
+		.br-mobile { display: none; }
+
+		@media (min-width: 581px) {
+		  .br-desktop { display: inline; }
+		}
+
+		@media (max-width: 580px) {
+		  .br-mobile { display: inline; }
+		}
+
+		.sub-br { display: none; }
+		.sub-dot { display: inline; }
+
+		@media (max-width: 580px) {
+		  .sub-br { display: inline; }
+		  .sub-dot { display: none; }
+		}
+
 	</style>
 </head>
 <body>
@@ -573,8 +593,10 @@
 				<img src="https://threereefs.com/logo_white.png" alt="Three Reefs">
 			</div>
 			<div class="home-rule"></div>
-			<p class="home-tagline">A privately held financial group<br>incorporated in the Cayman Islands.</p>
-			<p class="home-sub">Proprietary Trading · Single-Family Office · Solutions &amp; Services</p>
+			<p class="home-tagline">A privately held <span class="br-mobile"><br></span>financial group<span class="br-desktop"><br></span><span class="br-mobile"><br></span>incorporated in the <span class="br-mobile"><br></span>Cayman Islands.</p>
+
+			<p class="home-sub">Proprietary Trading · Single-Family Office<span class="sub-br"><br></span><span class="sub-dot"> · </span>Solutions &amp; Services</p>
+
 		</div>
 		<a href="#group" class="home-scroll" aria-label="Scroll to next section">
 			<span>Discover</span>
