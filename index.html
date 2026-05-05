@@ -4,43 +4,30 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-
-	<!-- Primary Meta -->
-	<title>Three Reefs — Group</title>
+	<title>Three Reefs</title>
 	<meta name="description" content="Three Reefs is a privately held financial group incorporated in the Cayman Islands.">
 	<meta name="robots" content="index, follow">
-	<meta name="format-detection" content="telephone=no">
 	<link rel="canonical" href="https://www.threereefs.com/">
 
-	<!-- Open Graph -->
 	<meta property="og:type" content="website">
 	<meta property="og:site_name" content="Three Reefs">
-	<meta property="og:title" content="Three Reefs — Group">
+	<meta property="og:title" content="Three Reefs">
 	<meta property="og:description" content="Three Reefs is a privately held financial group incorporated in the Cayman Islands.">
 	<meta property="og:url" content="https://www.threereefs.com/">
 	<meta property="og:image" content="https://threereefs.com/favico.png">
 
-	<!-- Twitter Card -->
 	<meta name="twitter:card" content="summary">
-	<meta name="twitter:title" content="Three Reefs — Group">
+	<meta name="twitter:title" content="Three Reefs">
 	<meta name="twitter:description" content="Three Reefs is a privately held financial group incorporated in the Cayman Islands.">
 
-	<!-- Structured Data -->
 	<script type="application/ld+json">
 	[
-		{
-			"@context": "https://schema.org",
-			"@type": "WebSite",
-			"name": "Three Reefs",
-			"url": "https://www.threereefs.com/"
-		},
 		{
 			"@context": "https://schema.org",
 			"@type": "Organization",
 			"name": "Three Reefs",
 			"description": "Privately held financial group incorporated in the Cayman Islands.",
 			"url": "https://www.threereefs.com",
-			"logo": "https://threereefs.com/favico.png",
 			"address": {
 				"@type": "PostalAddress",
 				"streetAddress": "Signal House, 21B, 134 Off Fairbanks Road",
@@ -48,51 +35,39 @@
 				"addressRegion": "Grand Cayman",
 				"postalCode": "KY1-9012",
 				"addressCountry": "KY"
-			},
-			"contactPoint": [
-				{
-					"@type": "ContactPoint",
-					"email": "info@threereefs.com",
-					"contactType": "General Enquiries"
-				},
-				{
-					"@type": "ContactPoint",
-					"email": "ops@threereefs.com",
-					"contactType": "Operations"
-				}
-			]
+			}
 		}
 	]
 	</script>
 
-	<!-- Favicon -->
-	<link rel="icon" type="image/png" sizes="32x32" href="https://threereefs.com/favico.png">
-	<link rel="icon" type="image/png" sizes="16x16" href="https://threereefs.com/favico.png">
-	<link rel="apple-touch-icon" sizes="180x180" href="https://threereefs.com/favico.png">
+	<link rel="icon" type="image/png" href="https://threereefs.com/favico.png">
 	<meta name="theme-color" content="#0e1c28">
 
-	<!-- Fonts -->
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Cormorant+Garamond:wght@300;400&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
 
 	<style>
 		:root {
-			--ink:       #0e1c28;
-			--ink-mid:   #2e3f4f;
-			--ink-muted: #7a8a96;
-			--paper:     #faf9f7;
-			--rule:      #d6cfc7;
-			--accent:    #0e1c28;
+			--ink:        #0e1c28;
+			--ink-mid:    #2e3f4f;
+			--ink-muted:  #7a8a96;
+			--paper:      #faf9f7;
+			--rule:       #d6cfc7;
+			--accent:     #0e1c28;
+
+			/* Section backgrounds */
+			--bg-hero:    #0e1c28;
+			--bg-about:   #faf9f7;
+			--bg-trading: #0f2233;
+			--bg-global:  #f4f0ea;
+			--bg-contact: #1a2e3d;
 		}
 
 		*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-
-		html { background: var(--paper); }
+		html { scroll-behavior: smooth; background: var(--bg-hero); }
 
 		body {
-			background: var(--paper);
-			color: var(--ink);
 			font-family: 'EB Garamond', Georgia, serif;
 			font-size: clamp(1rem, 1.5vw, 1.125rem);
 			line-height: 1.75;
@@ -100,233 +75,649 @@
 			text-rendering: optimizeLegibility;
 			font-variant-ligatures: common-ligatures;
 			font-feature-settings: "liga" 1, "onum" 1, "kern" 1;
+		}
+
+		/* ── Keyframes ── */
+		@keyframes bloom {
+			from { opacity: 0; transform: scale(0.96); }
+			to   { opacity: 1; transform: scale(1); }
+		}
+		@keyframes riseUp {
+			from { opacity: 0; transform: translateY(28px); }
+			to   { opacity: 1; transform: translateY(0); }
+		}
+		@keyframes fadeIn {
+			from { opacity: 0; }
+			to   { opacity: 1; }
+		}
+		@keyframes lineExpand {
+			from { transform: scaleX(0); }
+			to   { transform: scaleX(1); }
+		}
+		@keyframes parallaxFloat {
+			0%, 100% { transform: translateY(0px); }
+			50% { transform: translateY(-8px); }
+		}
+
+		/* ── Nav ── */
+		nav {
+			position: fixed;
+			top: 0; left: 0; right: 0;
+			z-index: 100;
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			padding: 1.25rem clamp(1.5rem, 6vw, 4rem);
+			transition: background 0.4s ease, box-shadow 0.4s ease;
+		}
+		nav.scrolled {
+			background: rgba(14, 28, 40, 0.97);
+			backdrop-filter: blur(8px);
+			box-shadow: 0 1px 0 rgba(255,255,255,0.06);
+		}
+		.nav-logo img {
+			height: 28px;
+			width: auto;
+			display: block;
+			filter: brightness(0) invert(1);
+			opacity: 0.92;
+		}
+		.nav-links {
+			display: flex;
+			align-items: center;
+			gap: 2.5rem;
+			list-style: none;
+		}
+		.nav-links a {
+			font-size: 0.68em;
+			letter-spacing: 0.15em;
+			text-transform: uppercase;
+			color: rgba(255,255,255,0.6);
+			text-decoration: none;
+			transition: color 0.2s ease;
+		}
+		.nav-links a:hover { color: rgba(255,255,255,0.92); }
+		.nav-cta {
+			font-size: 0.68em;
+			letter-spacing: 0.15em;
+			color: rgba(255,255,255,0.85);
+			border: 1px solid rgba(255,255,255,0.25); text-decoration: none; white-space: nowrap;
+			padding: 0.45em 1.1em;
+			transition: border-color 0.2s ease, color 0.2s ease;
+			text-transform: uppercase;
+		}
+		.nav-cta:hover {
+			color: #fff;
+			border-color: rgba(255,255,255,0.55);
+		}
+
+		/* ── HERO ── */
+		#hero {
+			position: relative;
 			min-height: 100vh;
+			background: var(--bg-hero);
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			overflow: hidden;
+		}
+
+		/* Placeholder hero image — replace with actual photography */
+		.hero-bg {
+			position: absolute;
+			inset: 0;
+			background-image:
+				linear-gradient(to bottom, rgba(14,28,40,0.55) 0%, rgba(14,28,40,0.72) 60%, rgba(14,28,40,0.92) 100%),
+				url('https://images.unsplash.com/photo-1505118380757-91f5f5632de0?w=1600&q=80&auto=format&fit=crop');
+			background-size: cover;
+			background-position: center 40%;
+			background-attachment: fixed;
+		}
+
+		/* Subtle grain texture overlay */
+		.hero-bg::after {
+			content: '';
+			position: absolute;
+			inset: 0;
+			background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+			opacity: 0.5;
+			pointer-events: none;
+		}
+
+		.hero-content {
+			position: relative;
+			z-index: 2;
+			text-align: center;
+			padding: clamp(6rem, 12vh, 10rem) clamp(1.5rem, 8vw, 4rem) clamp(4rem, 8vh, 6rem);
+			max-width: 820px;
+		}
+
+		.hero-eyebrow {
+			display: block;
+			font-size: 0.68em;
+			letter-spacing: 0.22em;
+			text-transform: uppercase;
+			color: rgba(255,255,255,0.45);
+			margin-bottom: 2rem;
+			animation: fadeIn 1s ease 0.2s both;
+		}
+
+		.hero-logo {
+			margin: 0 auto 2.5rem;
+			animation: bloom 1s cubic-bezier(0.22, 1, 0.36, 1) 0.1s both;
+		}
+		.hero-logo img {
+			width: clamp(160px, 26vw, 230px);
+			height: auto;
+			filter: brightness(0) invert(1);
+			opacity: 0.95;
+		}
+
+		.hero-rule {
+			width: 48px;
+			height: 1px;
+			background: rgba(255,255,255,0.3);
+			margin: 0 auto 2.5rem;
+			transform-origin: left center;
+			animation: lineExpand 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.5s both;
+		}
+
+		.hero-tagline {
+			font-family: 'Cormorant Garamond', serif;
+			font-weight: 300;
+			font-style: italic;
+			font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+			color: rgba(255,255,255,0.85);
+			line-height: 1.5;
+			letter-spacing: 0.01em;
+			margin-bottom: 1.25rem;
+			animation: riseUp 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.55s both;
+		}
+
+		.hero-sub {
+			font-size: 0.88em;
+			color: rgba(255,255,255,0.42);
+			letter-spacing: 0.04em;
+			animation: riseUp 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.7s both;
+		}
+
+		.hero-scroll {
+			position: absolute;
+			bottom: 2.5rem;
+			left: 50%;
+			transform: translateX(-50%);
 			display: flex;
 			flex-direction: column;
 			align-items: center;
-			justify-content: center;
-			padding: clamp(40px, 8vh, 80px) clamp(24px, 6vw, 48px);
+			gap: 0.5rem;
+			animation: fadeIn 1s ease 1.4s both;
+			cursor: pointer;
+			text-decoration: none;
+		}
+		.hero-scroll span {
+			font-size: 0.62em;
+			letter-spacing: 0.22em;
+			text-transform: uppercase;
+			color: rgba(255,255,255,0.35);
+		}
+		.scroll-line {
+			width: 1px;
+			height: 36px;
+			background: rgba(255,255,255,0.2);
+			animation: parallaxFloat 2.2s ease-in-out infinite;
 		}
 
-		/* ── Page fade-in ── */
-		@keyframes bloom {
-		  from { opacity: 0; transform: scale(0.97); }
-		  to   { opacity: 1; transform: scale(1); }
-		}
-		@keyframes riseUp {
-		  from { opacity: 0; transform: translateY(22px); }
-		  to   { opacity: 1; transform: translateY(0); }
-		}
-		.logo-wrap  { animation: bloom  0.7s  cubic-bezier(0.22, 1, 0.36, 1) 0.03s both; }
-		.body-text  { animation: riseUp 0.65s cubic-bezier(0.22, 1, 0.36, 1) 0.16s both; }
-		hr          { animation: riseUp 0.65s cubic-bezier(0.22, 1, 0.36, 1) 0.26s both; }
-		.meta-grid  { animation: riseUp 0.65s cubic-bezier(0.22, 1, 0.36, 1) 0.35s both; }
-		.disclaimer { animation: riseUp 0.65s cubic-bezier(0.22, 1, 0.36, 1) 0.46s both; }
-
-		.page {
-			max-width: 800px;
-			width: 100%;
-			
+		/* ── SECTION SHARED ── */
+		section {
+			padding: clamp(4rem, 10vh, 7rem) clamp(1.5rem, 8vw, 5rem);
 		}
 
-		.logo-wrap {
-			margin-bottom: 2rem;
+		.section-inner {
+			max-width: 820px;
+			margin: 0 auto;
 		}
 
-		.logo-wrap img {
+		.section-label {
 			display: block;
-			width: clamp(140px, 22vw, 190px);
-			height: auto;
+			font-size: 0.67em;
+			letter-spacing: 0.2em;
+			text-transform: uppercase;
+			margin-bottom: 1.75rem;
 		}
 
-		hr {
-			border: none;
-			border-top: 1px solid var(--rule);
-			margin: 1rem 0;
+		.section-rule {
+			width: 40px;
+			height: 1px;
+			margin-bottom: 2.25rem;
 		}
 
-		.body-text {
+		/* ── ABOUT SECTION ── */
+		#about {
+			background: var(--bg-about);
+		}
+		#about .section-label { color: var(--ink-muted); }
+		#about .section-rule { background: var(--rule); }
+
+		.about-lead {
+			font-family: 'Cormorant Garamond', serif;
+			font-weight: 400;
+			font-size: clamp(1.35rem, 2.5vw, 1.75rem);
+			color: var(--ink);
+			line-height: 1.55;
+			margin-bottom: 1.75rem;
+		}
+
+		.about-body {
 			color: var(--ink-mid);
 			text-align: justify;
 			hyphens: auto;
+			font-size: 0.97em;
+		}
+		.about-body p { margin-bottom: 1em; }
+		.about-body p:last-child { margin-bottom: 0; }
+
+		/* ── TRADING SECTION ── */
+		#trading {
+			background: var(--bg-trading);
+		}
+		#trading .section-label { color: rgba(255,255,255,0.35); }
+		#trading .section-rule { background: rgba(255,255,255,0.14); }
+
+		.entity-name {
+			font-family: 'Cormorant Garamond', serif;
+			font-weight: 400;
+			font-size: clamp(1.5rem, 3vw, 2.2rem);
+			color: #fff;
+			margin-bottom: 0.5rem;
+			line-height: 1.3;
 		}
 
-		.body-text p { margin-bottom: 1em; }
-		.body-text p:last-child { margin-bottom: 0; }
-
-		.entity {
-			color: var(--ink);
-			font-weight: 600;
-			letter-spacing: 0.01em;
+		.entity-reg {
+			font-size: 0.72em;
+			color: rgba(255,255,255,0.28);
+			margin-bottom: 1.75rem;
+			display: block;
+			letter-spacing: 0.02em;
 		}
 
-		.reg-num {
-			font-size: 0.82em;
-			color: var(--ink-muted);
-			font-variant-numeric: oldstyle-nums;
+		#trading .entity-body {
+			color: rgba(255,255,255,0.62);
+			text-align: justify;
+			hyphens: auto;
+			font-size: 0.97em;
 		}
 
-		/* ── Address block ── */
-		.meta-grid {
+		.entity-attributes {
+			display: grid;
+			grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+			gap: 0.75rem 1.5rem;
+			margin-top: 2.5rem;
+			padding-top: 2rem;
+			border-top: 1px solid rgba(255,255,255,0.08);
+		}
+
+		.attr-item { }
+		.attr-label {
+			display: block;
+			font-size: 0.62em;
+			letter-spacing: 0.18em;
+			text-transform: uppercase;
+			color: rgba(255,255,255,0.28);
+			margin-bottom: 0.3em;
+		}
+		.attr-value {
+			font-size: 0.92em;
+			color: rgba(255,255,255,0.72);
+		}
+
+		/* ── GLOBAL SECTION ── */
+		#global {
+			background: var(--bg-global);
+		}
+		#global .section-label { color: var(--ink-muted); }
+		#global .section-rule { background: var(--rule); }
+		#global .entity-name { color: var(--ink); }
+		#global .entity-reg { color: var(--ink-muted); }
+		#global .entity-body {
+			color: var(--ink-mid);
+			text-align: justify;
+			hyphens: auto;
+			font-size: 0.97em;
+		}
+
+		.global-attrs {
+			display: grid;
+			grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+			gap: 0.75rem 1.5rem;
+			margin-top: 2.5rem;
+			padding-top: 2rem;
+			border-top: 1px solid var(--rule);
+		}
+
+		#global .attr-label { color: var(--ink-muted); }
+		#global .attr-value { color: var(--ink-mid); }
+
+		/* ── CONTACT SECTION ── */
+		#contact {
+			background: var(--bg-contact);
+		}
+		#contact .section-label { color: rgba(255,255,255,0.3); }
+		#contact .section-rule { background: rgba(255,255,255,0.12); }
+
+		.contact-heading {
+			font-family: 'Cormorant Garamond', serif;
+			font-weight: 300;
+			font-style: italic;
+			font-size: clamp(1.4rem, 2.8vw, 2rem);
+			color: rgba(255,255,255,0.85);
+			margin-bottom: 2.5rem;
+			line-height: 1.5;
+		}
+
+		.contact-grid {
 			display: grid;
 			grid-template-columns: 1fr 1fr;
-			gap: 1rem 1rem;
-			margin-top: 0.25rem;
+			gap: 3rem 3rem;
+		}
+		@media (max-width: 620px) {
+			.contact-grid { grid-template-columns: 1fr; gap: 2rem; }
 		}
 
-		@media (max-width: 700px) {
-			.meta-grid { grid-template-columns: 1fr; gap: 1rem; }
-		}
-
-		.meta-block { }
-
-		.meta-label {
+		.contact-block-label {
 			display: block;
-			font-size: 0.7em;
-			letter-spacing: 0.14em;
+			font-size: 0.62em;
+			letter-spacing: 0.2em;
 			text-transform: uppercase;
-			color: var(--ink-muted);
-			font-family: 'EB Garamond', serif;
-			font-weight: 500;
-			margin-bottom: 0.5em;
+			color: rgba(255,255,255,0.28);
+			margin-bottom: 0.9em;
 		}
 
-		.meta-block address {
+		.contact-block address {
 			font-style: normal;
-			color: var(--ink-mid);
-			line-height: 1.65;
-			font-size: 0.95em;
+			color: rgba(255,255,255,0.28);
+			line-height: 1.75;
+			font-size: 0.92em;
 		}
 
-		.contact-row {
-			display: flex;
-			flex-direction: column;
-		}
-
-		.contact-line {
+		.contact-emails { list-style: none; }
+		.contact-emails li {
 			display: flex;
 			align-items: baseline;
-			gap: 1rem;
-			color: var(--ink-mid);
-			font-size: 0.95em;
+			gap: 1.2rem;
+			padding: 0.4em 0;
+			border-bottom: 1px solid rgba(255,255,255,0.06);
 		}
-
-		.contact-type {
-			min-width: 9em;
-			color: var(--ink-muted);
+		.contact-emails li:first-child { border-top: 1px solid rgba(255,255,255,0.06); }
+		.email-type {
+			font-size: 0.72em;
+			letter-spacing: 0.06em;
+			color: rgba(255,255,255,0.28);
+			min-width: 10em;
 		}
-
 		.email-link {
-			color: var(--ink);
+			color: rgba(255,255,255,0.65);
 			text-decoration: none;
+			font-size: 0.92em;
 			border-bottom: 1px solid transparent;
-			transition: border-color 0.2s ease;
+			transition: color 0.2s ease, border-color 0.2s ease;
+		}
+		.email-link:hover {
+			color: rgba(255,255,255,0.9);
+			border-color: rgba(255,255,255,0.25);
 		}
 
-		.email-link:hover { border-color: var(--rule); }
-
-		.disclaimer {
-			margin-top: 2rem;
-			padding-top: 1rem;
-			border-top: 1px solid var(--rule);
-			font-size: 0.74em;
-			color: var(--ink-muted);
-			line-height: 1.55;
-			text-align: justify;
+		/* ── FOOTER / DISCLAIMER ── */
+		footer {
+			background: #080f14;
+			padding: 2.5rem clamp(1.5rem, 8vw, 5rem);
 		}
-
-		.sr-only {
-			position: absolute; width: 1px; height: 1px;
-			padding: 0; margin: -1px; overflow: hidden;
-			clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+		.footer-inner {
+			max-width: 820px;
+			margin: 0 auto;
+			display: flex;
+			flex-direction: column;
+			gap: 1.5rem;
 		}
-		
-		.portal-link {
-			display: inline-block;
-			float: right;
-			font-size: 0.7em;
-			letter-spacing: 0.14em;
+		.footer-top {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			gap: 1rem;
+			flex-wrap: wrap;
+		}
+		.footer-logo img {
+			height: 22px;
+			width: auto;
+			filter: brightness(0) invert(1);
+			opacity: 0.3;
+		}
+		.footer-login {
+			font-size: 0.62em;
+			letter-spacing: 0.18em;
 			text-transform: uppercase;
-			color: var(--ink-muted);
+			color: rgba(255,255,255,0.3);
 			text-decoration: none;
 			border-bottom: 1px solid transparent;
 			transition: color 0.2s ease, border-color 0.2s ease;
-			animation: riseUp 0.65s cubic-bezier(0.22,1,0.36,1) 0.0s both;
-
-			margin-bottom: 1rem;
 		}
-		.portal-link:hover {
-			color: var(--ink);
-			border-color: var(--rule);
+		.footer-login:hover {
+			color: rgba(255,255,255,0.55);
+			border-color: rgba(255,255,255,0.2);
+		}
+		.footer-disclaimer {
+			font-size: 0.72em;
+			color: rgba(255,255,255,0.5);
+			line-height: 1.65;
+			text-align: justify;
+			border-top: 1px solid rgba(255,255,255,0.06);
+			padding-top: 1.5rem;
+		}
+
+		/* ── Scroll reveal ── */
+		.reveal {
+			opacity: 0;
+			transform: translateY(22px);
+			transition: opacity 0.75s cubic-bezier(0.22, 1, 0.36, 1),
+			            transform 0.75s cubic-bezier(0.22, 1, 0.36, 1);
+		}
+		.reveal.visible {
+			opacity: 1;
+			transform: translateY(0);
+		}
+		.reveal-delay-1 { transition-delay: 0.1s; }
+		.reveal-delay-2 { transition-delay: 0.2s; }
+		.reveal-delay-3 { transition-delay: 0.32s; }
+		.reveal-delay-4 { transition-delay: 0.44s; }
+
+		/* ── Responsive nav ── */
+		@media (max-width: 580px) {
+			.nav-links-sections { display: none; }
+		}
+
+		/* ── entity name text in dark sections ── */
+		.entity-name-light {
+			color: rgba(255,255,255,0.92);
+		}
+
+		/* ── Divider between sections ── */
+		.section-divider {
+			width: 100%;
+			height: 1px;
 		}
 	</style>
 </head>
 <body>
-	
 
-	<main class="page">
-		<div style="overflow: hidden;">
-        <a href="https://portal.threereefs.com/login" class="portal-link">Log In</a>
-    </div>
+	<!-- NAV -->
+	<nav id="mainNav">
+		<a href="#hero" class="nav-logo">
+			<img src="https://threereefs.com/logo.png" alt="Three Reefs">
+		</a>
 		
-		<h1 class="sr-only">Three Reefs — Cayman Islands Financial Group</h1>
+		<ul class="nav-links nav-links-sections">
+			<li><a href="#about">Group</a></li>
+			<li><a href="#trading">Trading</a></li>
+			<li><a href="#global">Global</a></li>
+			<li><a href="#contact">Contact</a></li>
+		</ul>
+		<a href="https://portal.threereefs.com/login" class="nav-cta">LOG IN</a>
+	</nav>
 
-		<div class="logo-wrap">
-			<center><img src="https://threereefs.com/logo.png" alt="Three Reefs"></center>
-		</div>
-
-		<div class="body-text">
-			<p>
-				<span class="entity">Three Reefs</span> is a privately held financial group incorporated in the Cayman Islands. The group has two operating companies: Three Reefs Trading SEZC and Three Reefs Global.
-			</p>
-			<p>
-				<span class="entity">Three Reefs Trading SEZC</span> is a proprietary trading entity and single-family office. It trades commodities and financial instruments across global markets. It does not solicit or accept outside capital. Three Reefs Trading SEZC is registered as an Exempted Special Economic Zone Company <span class="reg-num">(No.&thinsp;&thinsp;SN-433268)</span>.
-			</p>
-			<p>
-				<span class="entity">Three Reefs Global</span> provides specialized solutions and services to Three Reefs Trading SEZC, qualified institutional financial entities, and professional clients. It does not serve retail or individual customers. Three Reefs Global is incorporated as an Exempted Company <span class="reg-num">(No.&thinsp;&thinsp;SN-433266)</span>.
-			</p>
-		</div>
-
-		<br>
-
-		<div class="meta-grid">
-			<div class="meta-block">
-				<span class="meta-label">Principal Office</span>
-				<address>
-					Cayman Commodities and Derivatives Centre<br>
-					Signal House, 21B<br>
-					134 Off Fairbanks Road<br>
-					George Town, Grand Cayman KY1-9012
-				</address>
+	<!-- HERO -->
+	<section id="hero">
+		<div class="hero-bg"></div>
+		<div class="hero-content">
+			<span class="hero-eyebrow"> </span>
+			<div class="hero-logo">
+				<img src="https://threereefs.com/logo.png" alt="Three Reefs">
 			</div>
-			<div class="meta-block">
-				<span class="meta-label">Registered Office</span>
-				<address>
-					c/o Sinclair Corporate Services Ltd<br>
-					3rd Floor, Genesis Building<br>
-					PO Box 498<br>
-					George Town, Grand Cayman KY1-1006
-				</address>
+			<div class="hero-rule"></div>
+			<p class="hero-tagline">A privately held financial group<br>incorporated in the Cayman Islands.</p>
+			<p class="hero-sub">Proprietary Trading · Single-Family Office · Solutions &amp; Services</p>
+		</div>
+		<a href="#about" class="hero-scroll" aria-label="Scroll to next section">
+			<span>Discover</span>
+			<div class="scroll-line"></div>
+		</a>
+	</section>
+
+	<!-- ABOUT -->
+	<section id="about">
+		<div class="section-inner">
+			<span class="section-label reveal">The Group</span>
+			<div class="section-rule reveal reveal-delay-1"></div>
+			<p class="about-lead reveal reveal-delay-2">
+				Three Reefs is structured around two operating companies: Trading and Global.
+			</p>
+			<div class="about-body reveal reveal-delay-3">
+				<p>
+					Three Reefs is a privately held financial group incorporated in the Cayman Islands. 
+				</p>
+				<p>
+					The group has two operating companies: Three Reefs Trading SEZC and Three Reefs Global. 
+				</p>
+				<p>
+					Both entities operate from Signal House in George Town, Grand Cayman, within the Cayman Commodities and Derivatives Centre.
+				</p>
 			</div>
-			<div class="meta-block" style="grid-column: 1 / -1;">
-				<span class="meta-label">Contact</span>
-				<div class="contact-row">
-					<div class="contact-line">
-						<span class="contact-type">General Enquiries</span>
-						<a href="mailto:info@threereefs.com" class="email-link">info@threereefs.com</a>
-					</div>
-					<div class="contact-line">
-						<span class="contact-type">Operations</span>
-						<a href="mailto:ops@threereefs.com" class="email-link">ops@threereefs.com</a>
-					</div>
+		</div>
+	</section>
+
+	<!-- TRADING -->
+	<section id="trading">
+		<div class="section-inner">
+			<span class="section-label reveal">Three Reefs Trading SEZC</span>
+			<div class="section-rule reveal reveal-delay-1"></div>
+			<h2 class="entity-name entity-name-light reveal reveal-delay-2">Proprietary Trading<br>&amp; Single-Family Office</h2>
+			<span class="entity-reg reveal reveal-delay-2">Exempted Special Economic Zone Company — No.&thinsp;SN-433268</span>
+			<div class="entity-body reveal reveal-delay-3">
+				<p>
+					Three Reefs Trading SEZC is a proprietary trading entity and single-family office. It trades commodities and financial instruments across global markets. It does not solicit or accept outside capital.
+				</p>
+				<br>
+				<p>
+					The entity operates an absolute return strategy across commodities, equities, derivatives and special situations, with a focus on asymmetric opportunities and event-driven catalysts.
+				</p>
+			</div>
+			
+		</div>
+	</section>
+
+	<!-- GLOBAL -->
+	<section id="global">
+		<div class="section-inner">
+			<span class="section-label reveal">Three Reefs Global</span>
+			<div class="section-rule reveal reveal-delay-1"></div>
+			<h2 class="entity-name reveal reveal-delay-2">Solutions &amp; Services</h2>
+			<span class="entity-reg reveal reveal-delay-2">Exempted Company — No.&thinsp;SN-433266</span>
+			<div class="entity-body reveal reveal-delay-3">
+				<p>
+					Three Reefs Global provides specialized solutions and services to Three Reefs Trading SEZC, qualified institutional financial entities, and professional clients.
+				</p>
+				<br>
+				<p>
+					Three Reefs Global does not serve retail or individual customers.
+				</p>
+			</div>
+			
+		</div>
+	</section>
+
+	<!-- CONTACT -->
+	<section id="contact">
+		<div class="section-inner">
+			<span class="section-label reveal">Contact</span>
+			<div class="section-rule reveal reveal-delay-1"></div>
+			
+			<div class="contact-grid">
+				<div class="reveal reveal-delay-2">
+					<span class="contact-block-label">Principal Office</span>
+					<address style="color: rgba(255,255,255,0.7); font-style: normal;">
+						Cayman Commodities and Derivatives Centre<br>
+						Signal House, 21B<br>
+						134 Off Fairbanks Road<br>
+						George Town, Grand Cayman KY1-9012
+					</address>
+				</div>
+				<div class="reveal reveal-delay-3">
+					<span class="contact-block-label">Registered Office</span>
+					<address style="color: rgba(255,255,255,0.7); font-style: normal;">
+						c/o Sinclair Corporate Services Ltd<br>
+						3rd Floor, Genesis Building<br>
+						PO Box 498<br>
+						George Town, Grand Cayman KY1-1006
+					</address>
+				</div>
+				<div style="grid-column: 1 / -1;" class="reveal reveal-delay-4">
+					<span class="contact-block-label">Email</span>
+					<ul class="contact-emails">
+						<li>
+							<span class="email-type">General Enquiries</span>
+							<a href="mailto:info@threereefs.com" class="email-link">info@threereefs.com</a>
+						</li>
+						<li>
+							<span class="email-type">Operations</span>
+							<a href="mailto:ops@threereefs.com" class="email-link">ops@threereefs.com</a>
+						</li>
+					</ul>
 				</div>
 			</div>
 		</div>
+	</section>
 
-		<footer class="disclaimer">
-			This website is for informational purposes only. It does not constitute an offer, solicitation, or financial advice. Services are not available to the general public and may be restricted in certain jurisdictions. Visitors should consult professional advisors before making financial decisions. This site does not use cookies or collect personal information. Three Reefs provides no warranties regarding the accuracy of this content and accepts no liability for its use. Three Reefs is not responsible for third-party links. Email communications may not be secure and are subject to monitoring for regulatory purposes.
-		</footer>
+	<!-- FOOTER -->
+	<footer>
+		<div class="footer-inner">
+			<div class="footer-top">
+				<a href="#hero" class="footer-logo">
+					<img src="https://threereefs.com/logo.png" alt="Three Reefs">
+				</a>
+				<a href="https://portal.threereefs.com/login" class="footer-login">Log in →</a>
+			</div>
+			<p class="footer-disclaimer">
+				This website is for informational purposes only. It does not constitute an offer, solicitation, or financial advice. Services are not available to the general public and may be restricted in certain jurisdictions. Visitors should consult professional advisors before making financial decisions. This site does not use cookies or collect personal information. Three Reefs provides no warranties regarding the accuracy of this content and accepts no liability for its use. Three Reefs is not responsible for third-party links. Email communications may not be secure and are subject to monitoring for regulatory purposes. 
+			</p>
+		</div>
+	</footer>
 
-	</main>
+	<script>
+		/* Nav scroll state */
+		const nav = document.getElementById('mainNav');
+		window.addEventListener('scroll', () => {
+			nav.classList.toggle('scrolled', window.scrollY > 60);
+		}, { passive: true });
+
+		/* Scroll reveal */
+		const reveals = document.querySelectorAll('.reveal');
+		const observer = new IntersectionObserver((entries) => {
+			entries.forEach(e => {
+				if (e.isIntersecting) {
+					e.target.classList.add('visible');
+					observer.unobserve(e.target);
+				}
+			});
+		}, { threshold: 0.12 });
+		reveals.forEach(el => observer.observe(el));
+	</script>
 </body>
 </html>
