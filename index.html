@@ -76,7 +76,18 @@
 			font-variant-ligatures: common-ligatures;
 			font-feature-settings: "liga" 1, "onum" 1, "kern" 1;
 		}
-
+		/* Scrollbar */
+		html, body {
+		    /* Hide scrollbar for IE, Edge and Firefox */
+		    -ms-overflow-style: none;  /* IE and Edge */
+		    scrollbar-width: none;     /* Firefox */
+		}
+		
+		/* Hide scrollbar for Chrome, Safari and Opera */
+		html::-webkit-scrollbar, 
+		body::-webkit-scrollbar {
+		    display: none;
+		}
 		/* ── Keyframes ── */
 		@keyframes bloom {
 			from { opacity: 0; transform: scale(0.96); }
