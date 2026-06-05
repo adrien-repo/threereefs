@@ -236,17 +236,18 @@
 			font-family: 'Cormorant Garamond', serif;
 			font-weight: 300;
 			font-style: italic;
-			font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+			font-size: clamp(1.3rem, 2.8vw, 1.9rem);
 			color: rgba(255,255,255,0.85);
 			line-height: 1.5;
 			letter-spacing: 0.01em;
 			margin-bottom: 1.25rem;
 			animation: riseUp 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.55s both;
+			text-indent: -0.2em;   /* pulls the opening quote left so the T aligns with A */
 		}
 
 		.home-sub {
-			font-size: 0.88em;
-			color: rgba(255,255,255,0.42);
+			font-size: 0.92em;
+			color: rgba(255,255,255,0.62);
 			letter-spacing: 0.04em;
 			animation: riseUp 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.7s both;
 		}
@@ -570,7 +571,7 @@
 		.sub-br { display: none; }
 		.sub-dot { display: inline; }
 
-		@media (max-width: 580px) {
+		@media (max-width: 675px) {
 		  .sub-br { display: inline; }
 		  .sub-dot { display: none; }
 		}
@@ -603,10 +604,8 @@
 				<img src="https://threereefs.com/logo_white.png" alt="Three Reefs">
 			</div>
 			<div class="home-rule"></div>
-			<p class="home-tagline">A privately held <span class="br-mobile"><br></span>financial group<span class="br-desktop"><br></span><span class="br-mobile"><br></span>incorporated in the <span class="br-mobile"><br></span>Cayman Islands.</p>
-
+			<p class="home-tagline">&ldquo;Three mighty reefs <span class="br-mobile"><br></span>cradle the raging tide,<span class="br-desktop"><br></span><span class="br-mobile"><br></span>A quiet bay, <span class="br-mobile"><br></span>far past the winds of pride.&rdquo;</p>
 			<p class="home-sub">Proprietary Trading · Single-Family Office<span class="sub-br"><br></span><span class="sub-dot"> · </span>Solutions &amp; Services</p>
-
 		</div>
 		<a href="#group" class="home-scroll" aria-label="Scroll to next section">
 			<span>Discover</span>
@@ -701,8 +700,14 @@
 						George Town, Grand Cayman KY1-1006
 					</address>
 				</div>
-				<div style="grid-column: 1 / -1;" class="reveal reveal-delay-4">
-					<span class="contact-block-label">Email</span>
+				<div class="reveal reveal-delay-4">
+					<span class="contact-block-label">Mailing Address</span>
+					<address style="color: rgba(255,255,255,0.7); font-style: normal;">
+						10 Market Street, Suite/Box 852<br>
+						George Town, Grand Cayman KY1-9006<br>
+					</address>
+				</div>
+				<div style="grid-column: 1 / -1;" class="reveal reveal-delay-5">
 					<ul class="contact-emails">
 						<li>
 							<span class="email-type">General Enquiries</span>
@@ -712,17 +717,13 @@
 							<span class="email-type">Operations</span>
 							<a href="mailto:ops@threereefs.com" class="email-link">ops@threereefs.com</a>
 						</li>
-					</ul>
-				</div>
-				<div style="grid-column: 1 / -1;" class="reveal reveal-delay-5">
-					<span class="contact-block-label">Phone</span>
-					<ul class="contact-emails">
 						<li>
 							<span class="email-type">Direct Line</span>
 							<a href="tel:+13459234654" class="email-link">+1 345-923-4654</a>
 						</li>
 					</ul>
 				</div>
+				
 			</div>
 		</div>
 	</section>
