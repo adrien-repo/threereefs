@@ -59,8 +59,8 @@
 			/* Section backgrounds */
 			--bg-home:    #0e1c28;
 			--bg-group:   #faf9f7;
-			--bg-trading: #0f2233;
-			--bg-global:  #f4f0ea;
+			--bg-activities: #0f2233;
+			--bg-operations:  #f4f0ea;
 			--bg-contact: #1a2e3d;
 		}
 
@@ -314,6 +314,7 @@
 			color: var(--ink);
 			line-height: 1.55;
 			margin-bottom: 1.75rem;
+			
 		}
 
 		.group-body {
@@ -325,17 +326,17 @@
 		.group-body p { margin-bottom: 1em; }
 		.group-body p:last-child { margin-bottom: 0; }
 
-		/* ── TRADING SECTION ── */
-		#trading {
-			background: var(--bg-trading);
+		/* ── activities SECTION ── */
+		#activities {
+			background: var(--bg-activities);
 		}
-		#trading .section-label { color: rgba(255,255,255,0.35); }
-		#trading .section-rule { background: rgba(255,255,255,0.14); }
+		#activities .section-label { color: rgba(255,255,255,0.35); }
+		#activities .section-rule { background: rgba(255,255,255,0.14); }
 
 		.entity-name {
 			font-family: 'Roboto', sans-serif;
 			font-weight: 400;
-			font-size: clamp(1.5rem, 3vw, 2.2rem);
+			font-size: clamp(1.35rem, 2.5vw, 1.75rem);
 			color: #fff;
 			margin-bottom: 0.5rem;
 			line-height: 1.3;
@@ -349,7 +350,7 @@
 			letter-spacing: 0.02em;
 		}
 
-		#trading .entity-body {
+		#activities .entity-body {
 			color: rgba(255,255,255,0.62);
 			text-align: justify;
 			/* hyphens: auto; */
@@ -379,22 +380,22 @@
 			color: rgba(255,255,255,0.72);
 		}
 
-		/* ── GLOBAL SECTION ── */
-		#global {
-			background: var(--bg-global);
+		/* ── operations SECTION ── */
+		#operations {
+			background: var(--bg-operations);
 		}
-		#global .section-label { color: var(--ink-muted); }
-		#global .section-rule { background: var(--rule); }
-		#global .entity-name { color: var(--ink); }
-		#global .entity-reg { color: var(--ink-muted); }
-		#global .entity-body {
+		#operations .section-label { color: var(--ink-muted); }
+		#operations .section-rule { background: var(--rule); }
+		#operations .entity-name { color: var(--ink); }
+		#operations .entity-reg { color: var(--ink-muted); }
+		#operations .entity-body {
 			color: var(--ink-mid);
 			text-align: justify;
 			/* hyphens: auto; */
 			font-size: 0.97em;
 		}
 
-		.global-attrs {
+		.operations-attrs {
 			display: grid;
 			grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
 			gap: 0.75rem 1.5rem;
@@ -403,8 +404,8 @@
 			border-top: 1px solid var(--rule);
 		}
 
-		#global .attr-label { color: var(--ink-muted); }
-		#global .attr-value { color: var(--ink-mid); }
+		#operations .attr-label { color: var(--ink-muted); }
+		#operations .attr-value { color: var(--ink-mid); }
 
 		/* ── CONTACT SECTION ── */
 		#contact {
@@ -586,8 +587,8 @@
 		
 		<ul class="nav-links nav-links-sections">
 			<li><a href="#group">The Group</a></li>
-			<li><a href="#trading">Trading</a></li>
-			<li><a href="#global">Global</a></li>
+			<li><a href="#activities">Activities</a></li>
+			<li><a href="#operations">Operations</a></li>
 			<li><a href="#contact">Contact</a></li>
 		</ul>
 		<a href="https://portal.threereefs.com/login" class="nav-cta">LOG IN</a>
@@ -616,59 +617,63 @@
 		<div class="section-inner">
 			<span class="section-label reveal">The Group</span>
 			<div class="section-rule reveal reveal-delay-1"></div>
-			<p class="group-lead reveal reveal-delay-2">
-				Three Reefs is structured around two core units:<br>Trading and Global.
-			</p>
+			<h2 class="group-lead reveal reveal-delay-2">
+				We are an independent group operating through two specialized, segregated entities: Trading and Global.
+			</h2>
 			<div class="group-body reveal reveal-delay-3">
 				<p>
-					Three Reefs is a privately held financial group incorporated in the Cayman Islands. The group has two operating companies: Three Reefs Trading and Three Reefs Global. 
+					Three Reefs Group is a privately held firm incorporated in the Cayman Islands with headquarters at Signal House, George Town. We are a registered member of the Cayman Commodities and Derivatives Centre. The Group is wholly owned by its founder and has no outside investors.
 				</p>
 				<p>
-					Three Reefs operates from George Town, Grand Cayman. Three Reefs is a member of the Cayman Commodities and Derivatives Centre.
+					 The Group operates through two distinct entities. <b>Three Reefs Trading</b> acts as a single-family office and invests its proprietary capital. <b>Three Reefs Global</b> delivers services to outside partners and builds the technology that powers the entire Group. The two entities are kept strictly separate to isolate the capital at risk from the operating business.
 				</p>
 			</div>
 		</div>
 	</section>
 
-	<!-- TRADING -->
-	<section id="trading">
+	<!-- ACTIVITIES -->
+	<section id="activities">
 		<div class="section-inner">
-			<span class="section-label reveal">Three Reefs Trading</span>
+			<span class="section-label reveal">Activities</span>
 			<div class="section-rule reveal reveal-delay-1"></div>
-			<h2 class="entity-name entity-name-light reveal reveal-delay-2">Proprietary Trading<br>&amp; Single-Family Office</h2>
-			<!-- <span class="entity-reg reveal reveal-delay-2">Exempted Special Economic Zone Company (No.&thinsp;SN-433268)</span> -->
+			<h2 class="entity-name entity-name-light reveal reveal-delay-2">
+			We trade our own capital with high conviction and provide bespoke services to institutional clients.
+			</h2>
 			<span class="entity-reg reveal reveal-delay-2">&nbsp;</span>
 			<div class="entity-body reveal reveal-delay-3">
 				<p>
-					Three Reefs Trading is a proprietary trading entity and single-family office. It trades commodities and financial instruments across global markets. It does not solicit or accept outside capital.
+					The Group executes an unconstrained and opportunistic trading strategy focused on analytical rigor, structural inefficiencies, special situations, and asymmetric opportunities. Our portfolio is generally concentrated in a few high-conviction positions and proprietary strategies that are fundamentally unrelated to one another. We invest exclusively in liquid, exchange-traded commodities, securities, and derivatives across global markets. We do not solicit or accept external capital.
 				</p>
 				<br>
 				<p>
-					The entity manages a concentrated portfolio of high-conviction ideas across commodities, equities, derivatives, futures and options, with a focus on analytical rigor, structural inefficiencies, special situations, and asymmetric opportunities.
+					We also provide specialized solutions and services to qualified institutional financial entities and professional clients. Engagements typically involve complex mandates across multiple jurisdictions and asset classes, requiring a high degree of technical expertise and professional discretion. We do not engage with, or offer our services to, retail or individual customers.
 				</p>
 			</div>
 			
 		</div>
 	</section>
 
-	<!-- GLOBAL -->
-	<section id="global">
+	<!-- OPERATIONS -->
+	<section id="operations">
 		<div class="section-inner">
-			<span class="section-label reveal">Three Reefs Global</span>
+			<span class="section-label reveal">Operations</span>
 			<div class="section-rule reveal reveal-delay-1"></div>
-			<h2 class="entity-name reveal reveal-delay-2">Solutions &amp; Services</h2>
-			<!-- <span class="entity-reg reveal reveal-delay-2">Exempted Company (No.&thinsp;SN-433266)</span> -->
+			<h2 class="entity-name reveal reveal-delay-2">
+			Our research, investment process, and systems for portfolio and treasury management are all developed in-house.
+			</h2>
+			
 			<span class="entity-reg reveal reveal-delay-2">&nbsp;</span>
 			<div class="entity-body reveal reveal-delay-3">
 				<p>
-					Three Reefs Global provides specialized solutions and services to Three Reefs Trading, qualified institutional financial entities, and professional clients operating across global markets.
-				</p>
-				<br>
-				<p>Engagements involve complex mandates across multiple jurisdictions and asset classes, with a high degree of technical expertise and professional discretion.
+					We manage our execution and treasury infrastructure independently, with banking and payment capabilities in more than 20 countries and 30 currencies, and access to over 150 markets worldwide.
 				</p>
 				<br>
 				<p>
-					Three Reefs Global does not engage with, or offer its services to, retail or individual customers.
+					Our systems are built front to back on a cloud-native architecture, providing a consolidated view of every position and account across the Group. Everything rests on our own capabilities: we do not rely on third-party research or data vendors, and we do not allocate capital to outside managers.
+				</p>
+				<br>
+				<p>
+					We are always looking for excellent operational partners. If you are a bank, broker, or execution venue offering competitive pricing, our door is open and we would be delighted to hear from you.
 				</p>
 			</div>
 			
@@ -703,15 +708,15 @@
 				<div class="reveal reveal-delay-4">
 					<span class="contact-block-label">Mailing Address</span>
 					<address style="color: rgba(255,255,255,0.7); font-style: normal;">
-						10 Market Street, Suite/Box 852<br>
+						10 Market Street<br>
+						PO Box 852<br>
 						George Town, Grand Cayman KY1-9006<br>
-						Cayman Islands
 					</address>
 				</div>
 				<div style="grid-column: 1 / -1;" class="reveal reveal-delay-5">
 					<ul class="contact-emails">
 						<li>
-							<span class="email-type">General Enquiries</span>
+							<span class="email-type">General Inquiries</span>
 							<a href="mailto:info@threereefs.com" class="email-link">info@threereefs.com</a>
 						</li>
 						<li>
@@ -739,7 +744,7 @@
 				<a href="https://portal.threereefs.com/login" class="footer-login">Log in →</a>
 			</div>
 			<p class="footer-disclaimer">
-				This website is for informational purposes only. It does not constitute an offer, solicitation, or financial advice. Services are not available to the general public and may be restricted in certain jurisdictions. Visitors should consult professional advisors before making financial decisions. This site does not use cookies or collect personal information. Three Reefs provides no warranties regarding the accuracy of this content and accepts no liability for its use. Three Reefs is not responsible for third-party links. Email communications may not be secure and are subject to monitoring for regulatory purposes. 
+				This website is for informational purposes only. It does not constitute an offer, a solicitation, or financial advice. Services are not available to the general public and may be restricted in certain jurisdictions. Visitors should consult professional advisors before making financial decisions. This site does not use tracking cookies or collect personal information. Three Reefs Group provides no warranties regarding the accuracy of this content and accepts no liability for its use. Three Reefs Group is not responsible for the content of third-party links. Email communications may not be secure and are subject to monitoring for regulatory purposes. 
 			</p>
 		</div>
 	</footer>
